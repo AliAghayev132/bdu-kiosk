@@ -7,12 +7,13 @@
 // ========================================
 // Building Data
 // ========================================
-const DATA_VERSION = '2026-02-02-v12'; // Update this to force reload
+const DATA_VERSION = '2026-04-24-v15'; // Update this to force reload
 
 const defaultBuildingsData = [
     {
         "id": "building-new-1761765509520",
         "name": "2 nömrəli tədris binası",
+        "nameEn": "Academic Building 2",
         "description": "Click Edit to add description",
         "image": "static/images/kampus/korpus-2/1.jpg",
         "folder": "korpus-2",
@@ -20,12 +21,19 @@ const defaultBuildingsData = [
             "type": "polygon",
             "points": "906.1183081255425,123.4827995193044 907.9836377836518,290.39343750700766 938.5669652120505,290.62512938146523 939.0883081255425,124.7927995193044"
         },
-        "galleries": [],
+        "galleries": [
+            "2.jpeg",
+            "3.jpeg",
+            "4.jpeg",
+            "5.jpeg",
+            "6.jpeg"
+        ],
         "shapes": []
     },
     {
         "id": "building-new-1761765550045",
         "name": "1 nömrəli tədris binası",
+        "nameEn": "Academic Building 1",
         "description": "Click Edit to add description",
         "image": "static/images/kampus/korpus-1/1.jpg",
         "folder": "korpus-1",
@@ -33,12 +41,19 @@ const defaultBuildingsData = [
             "type": "polygon",
             "points": "761.8134372799881,289.2824876793398 761.8134372799881,324.9024876793398 951.3100183072165,324.2204511778121 952.0050939305892,290.62512938146523"
         },
-        "galleries": [],
+        "galleries": [
+            "2.jpeg",
+            "3.jpeg",
+            "4.jpeg",
+            "5.jpeg",
+            "6.jpeg"
+        ],
         "shapes": []
     },
     {
         "id": "building-new-1761765662748",
         "name": "İdman Kompleksi",
+        "nameEn": "Sports Complex",
         "description": "Click Edit to add description",
         "image": "static/images/kampus/idman-kompleksi/1.jpg",
         "folder": "idman-kompleksi",
@@ -52,6 +67,7 @@ const defaultBuildingsData = [
     {
         "id": "building-new-1761765727904",
         "name": "Futbol Meydançası",
+        "nameEn": "Football Field",
         "description": "BDU-nun futbol meydançası universitetin idman infrastrukturu daxilində yüksək keyfiyyətli məşq və oyunlar üçün nəzərdə tutulmuş açıq sahədir.",
         "image": "static/images/kampus/futbol-meydancasi/1.jpg",
         "folder": "futbol-meydancasi",
@@ -65,6 +81,7 @@ const defaultBuildingsData = [
     {
         "id": "building-new-1761765760425",
         "name": "Bufet",
+        "nameEn": "Cafeteria",
         "description": "Click Edit to add description",
         "image": "static/images/kampus/bufet/1.jpg",
         "folder": "bufet",
@@ -78,6 +95,7 @@ const defaultBuildingsData = [
     {
         "id": "building-new-1761766103986",
         "name": "3 nömrəli tədris binası",
+        "nameEn": "Academic Building 3",
         "description": "Click Edit to add description",
         "image": "static/images/kampus/korpus-3/1.jpg",
         "folder": "korpus-3",
@@ -91,6 +109,7 @@ const defaultBuildingsData = [
     {
         "id": "building-new-1761766198127",
         "name": "Fizika Problemləri ETİ",
+        "nameEn": "Institute for Physical Problems",
         "description": "Click Edit to add description",
         "image": "static/images/kampus/fizika-problemleri/1.jpg",
         "folder": "fizika-problemleri",
@@ -104,6 +123,7 @@ const defaultBuildingsData = [
     {
         "id": "building-new-1761766224641",
         "name": "Eko Məkan",
+        "nameEn": "Eco Space",
         "description": "Bakı Dövlət Universiteti (BDU) ekoloji təhsil, elmi-tədqiqat və 'yaşıl iqtisadiyyat' sahələrində innovativ təşəbbüsləri ilə seçilir və universitetin 'Eko Məkan' layihəsi tələbələrə, gənc tədqiqatçılara və ictimaiyyətə ətraf mühitin qorunması, davamlı enerji və biomüxtəliflik sahələrində praktiki təcrübə və maarifləndirmə imkanı yaradır.",
         "image": "static/images/kampus/ekomekan/1.jpg",
         "folder": "ekomekan",
@@ -119,6 +139,7 @@ const defaultBuildingsData = [
     {
         "id": "building-new-1761766230864",
         "name": "Kitab Evi",
+        "nameEn": "Book House",
         "description": "Bakı Dövlət Universitetində açılan Kitab Evi tələbələr və əməkdaşlar üçün dərs və elmi ədəbiyyat, bədii əsərlər və dəftərxana ləvazimatları ilə təmin edən əsas məkana çevrilib.",
         "image": "static/images/kampus/kitab-evi/1.jpg",
         "folder": "kitab-evi",
@@ -134,6 +155,7 @@ const defaultBuildingsData = [
     {
         "id": "building-new-1761766411105",
         "name": "Əsas tədris binası",
+        "nameEn": "Main Academic Building",
         "description": "Bakı Dövlət Universiteti (BDU) Azərbaycanın ən qədim və şərəfli təhsil ocağı olaraq, milli təhsilimizin flaqmanı hesab olunur. Bu əzəmətli bina on minlərlə tələbənin elmi biliklərə yiyələndiyi, milli kadr potensialının formalaşdığı mərkəzdir.",
         "image": "static/images/kampus/esas-korpus/1.webp",
         "folder": "esas-korpus",
@@ -154,6 +176,7 @@ const defaultBuildingsData = [
     {
         "id": "building-new-1768210854788",
         "name": "EkoEnerji",
+        "nameEn": "EcoEnergy",
         "description": "Click Edit to add description",
         "image": "static/images/kampus/ekoenerji/1.jpg",
         "folder": "ekoenerji",
@@ -170,6 +193,7 @@ const defaultBuildingsData = [
     {
         "id": "parking",
         "name": "Üzgüçülük kompleksi",
+        "nameEn": "Swimming Complex",
         "description": "",
         "image": "static/images/kampus/uzguchuluk-kompleksi/1.jpg",
         "folder": "uzguchuluk-kompleksi",
@@ -185,10 +209,12 @@ const defaultBuildingsData = [
     },
     {
         "id": "building-new-1768211156479",
-        "name": "Tələbə evi",
-        "description": "Click Edit to add description",
-        "image": "static/images/kampus/telebe-evi/1.jpg",
-        "folder": "telebe-evi",
+        "name": "Tələbə məkanı",
+        "nameEn": "Student Space",
+        "description": "Tələbə məkanı tələbələrin asudə vaxtlarını keçirəcəyi, birgə debatlar, müzakirələr aparacağı, ünsiyyət quracağı bir məkandır. Burada yalnız Bakı Dövlət Universitetinin deyil, digər ali təhsil müəssisələrinin tələbələri də layihələrini həyata keçirə biləcəklər. Bu məkan planlaşdırılarkən müasir dövrün çağırışları, xüsusilə də dövlətimizin yaşıl texnologiyalar və ekoloji problemlərin həlli ilə bağlı siyasəti əsas götürülüb. Ərazidəki bütün işıqlandırma Günəş panelləri vasitəsilə təmin olunur. Layihənin mühüm cəhətlərindən biri də 24 saat fəaliyyət göstərən mini kitabxanasıdır.",
+        "descriptionEn": "Student Space is a place where students can spend their leisure time, hold joint debates and discussions, and socialize. Here, not only students of Baku State University but also students from other higher education institutions will be able to implement their projects. In planning this space, the demands of the modern era were taken as a basis, especially our state's policy on green technologies and solving environmental problems. All lighting in the area is powered by solar panels. One of the important features of the project is its 24-hour mini library.",
+        "image": "static/images/kampus/telebe-mekani/1.jpeg",
+        "folder": "telebe-mekani",
         "coordinates": {
             "type": "rect",
             "x": 382.38243918001916,
@@ -202,6 +228,7 @@ const defaultBuildingsData = [
     {
         "id": "building-new-1768299513250",
         "name": "Park",
+        "nameEn": "Park",
         "description": "Click Edit to add description",
         "image": "static/images/kampus/park/1.jpg",
         "folder": "park",
@@ -221,6 +248,7 @@ const defaultBuildingsData = [
     {
         "id": "building-new-1761765808642",
         "name": "TETYM",
+        "nameEn": "STREC",
         "description": "TETYM-də tələbələr innovativ layihələr hazırlayır, texniki bacarıqlarını inkişaf etdirir və texnologiya sektorunda parlaq karyera yollarını formalaşdırır.",
         "image": "static/images/kampus/tetym/1.webp",
         "folder": "tetym",
@@ -234,6 +262,7 @@ const defaultBuildingsData = [
     {
         "id": "building-new-1768305594576",
         "name": "TİİMM",
+        "nameEn": "AIIMM",
         "description": "Click Edit to add description",
         "image": "static/images/kampus/tiimm/1.webp",
         "folder": "tiimm",
@@ -308,6 +337,18 @@ const editModalSave = document.getElementById('editModalSave');
 const toast = document.getElementById('toast');
 const toastMessage = document.getElementById('toastMessage');
 const toolButtons = document.querySelectorAll('.tool-btn');
+
+function getCurrentLanguage() {
+    return document.documentElement.getAttribute('data-lang') || 'az';
+}
+
+function getBuildingDisplayName(building) {
+    return getCurrentLanguage() === 'en' && building.nameEn ? building.nameEn : building.name;
+}
+
+function getBuildingDisplayDescription(building) {
+    return getCurrentLanguage() === 'en' && building.descriptionEn ? building.descriptionEn : building.description;
+}
 
 // ========================================
 // Initialization
@@ -508,7 +549,7 @@ function createBuildingLabel(building) {
     text.setAttribute('text-anchor', 'middle');
 
     // Split long names into 2 lines
-    const name = building.name;
+    const name = getBuildingDisplayName(building);
     if (name.length > 12) {
         const words = name.split(' ');
 
@@ -626,12 +667,13 @@ function renderLegend() {
         btn.dataset.buildingId = building.id;
 
         const icon = getBuildingIcon(building.name);
+        const displayName = getBuildingDisplayName(building);
 
         btn.innerHTML = `
             <div class="legend-icon">
                 <i class="fas ${icon}"></i>
             </div>
-            <span class="legend-name">${building.name}</span>
+            <span class="legend-name">${displayName}</span>
         `;
 
         btn.addEventListener('click', () => handleLegendClick(building));
@@ -786,6 +828,17 @@ function setupEventListeners() {
             }
         });
     }
+
+    document.addEventListener('langchange', () => {
+        renderBuildings();
+        renderLegend();
+
+        if (mapModalOverlay && mapModalOverlay.classList.contains('active') && selectedBuilding) {
+            modalTitle.textContent = getBuildingDisplayName(selectedBuilding);
+            modalDescription.textContent = getBuildingDisplayDescription(selectedBuilding) || 'Təsvir mövcud deyil';
+            setupCarousel(selectedBuilding);
+        }
+    });
 }
 
 function handleBuildingClick(building) {
@@ -842,8 +895,8 @@ function selectBuilding(building, updateSelection = true) {
 // Modal Functions
 // ========================================
 function openModal(building) {
-    modalTitle.textContent = building.name;
-    modalDescription.textContent = building.description || 'Təsvir mövcud deyil';
+    modalTitle.textContent = getBuildingDisplayName(building);
+    modalDescription.textContent = getBuildingDisplayDescription(building) || 'Təsvir mövcud deyil';
 
     // Setup carousel
     setupCarousel(building);
@@ -908,7 +961,7 @@ function setupCarousel(building) {
         slide.className = 'carousel-item';
 
         // Add navigation indicator to image to make it clear it's clickable in coverflow
-        img.alt = caption || building.name;
+        img.alt = caption || getBuildingDisplayName(building);
         slide.appendChild(img);
         mapCarouselInner.appendChild(slide);
 
@@ -953,7 +1006,7 @@ function setupCarousel(building) {
 
             img.onload = () => {
                 // Success! Add this slide
-                finalizeSlide(img, building.name);
+                finalizeSlide(img, getBuildingDisplayName(building));
                 // Continue to next number
                 probeSequence(index + 1);
             };
@@ -973,10 +1026,10 @@ function setupCarousel(building) {
     // 1. High Priority: Primary Image
     if (building.image) {
         const primaryImg = new Image();
-        primaryImg.onload = () => finalizeSlide(primaryImg, building.name);
+        primaryImg.onload = () => finalizeSlide(primaryImg, getBuildingDisplayName(building));
         primaryImg.onerror = () => {
             // If primary fails and no folder, fallback to default
-            if (!folder) finalizeSlide(primaryImg, building.name);
+            if (!folder) finalizeSlide(primaryImg, getBuildingDisplayName(building));
         };
         primaryImg.src = building.image;
     }
@@ -988,7 +1041,7 @@ function setupCarousel(building) {
             const fullUrl = displayUrl.startsWith('static') ? displayUrl : `static/images/kampus/${folder}/${displayUrl}`;
 
             const gImg = new Image();
-            gImg.onload = () => finalizeSlide(gImg, item.caption || building.name);
+            gImg.onload = () => finalizeSlide(gImg, item.caption || getBuildingDisplayName(building));
             gImg.src = fullUrl;
         });
     } else if (folder) {

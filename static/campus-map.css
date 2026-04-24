@@ -36,7 +36,8 @@
     --transition-slow: 0.5s ease;
 }
 *{
-    cursor: none!important; /* Hide cursor */
+    /* cursor: none!important;  */
+    /* Hide cursor */
 }
 /* Reset & Base */
 * {
@@ -611,28 +612,46 @@ body {
     border-radius: 15px;
     overflow: hidden;
     background: var(--light-gray);
+    height: 380px;
 }
 
 .carousel-slides {
-    display: flex;
-    transition: transform 0.5s ease;
-}
-
-.carousel-slide {
-    min-width: 100%;
     position: relative;
+    width: 100%;
+    height: 100%;
 }
 
-.carousel-slide img {
+.carousel-slide,
+.carousel-item {
+    position: absolute;
+    inset: 0;
     width: 100%;
-    height: 350px;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+}
+
+.carousel-slide.active,
+.carousel-item.active {
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 2;
+}
+
+.carousel-slide img,
+.carousel-item img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     display: block;
+    border-radius: 15px;
 }
 
-.carousel-slide .placeholder {
+.carousel-slide .placeholder,
+.carousel-item .placeholder {
     width: 100%;
-    height: 350px;
+    height: 100%;
     background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
     display: flex;
     align-items: center;
@@ -1232,12 +1251,18 @@ body {
         max-height: 95vh;
     }
     
-    .carousel-slide img {
+    .carousel-wrapper {
         height: 250px;
     }
     
-    .carousel-slide .placeholder {
-        height: 250px;
+    .carousel-slide img,
+    .carousel-item img {
+        height: 100%;
+    }
+    
+    .carousel-slide .placeholder,
+    .carousel-item .placeholder {
+        height: 100%;
     }
     
     .edit-panel {
@@ -1281,12 +1306,18 @@ body {
         font-size: 0.65em;
     }
     
-    .carousel-slide img {
+    .carousel-wrapper {
         height: 200px;
     }
     
-    .carousel-slide .placeholder {
-        height: 200px;
+    .carousel-slide img,
+    .carousel-item img {
+        height: 100%;
+    }
+    
+    .carousel-slide .placeholder,
+    .carousel-item .placeholder {
+        height: 100%;
     }
     
     .carousel-btn {
