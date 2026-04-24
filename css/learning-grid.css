@@ -1,0 +1,221 @@
+/* Modern Learning Grid Styles */
+.learning-section-modern {
+    background: linear-gradient(135deg, rgba(26, 58, 92, 0.03), rgba(44, 82, 130, 0.05));
+    border: 1px solid rgba(26, 58, 92, 0.1);
+    border-radius: 24px;
+    padding: 40px;
+    margin-top: 40px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.05);
+}
+
+.modern-title {
+    color: #1a3a5c;
+    margin-bottom: 35px;
+    font-size: 1.8em;
+    text-align: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.modern-title i {
+    color: #d4af37;
+    font-size: 1.2em;
+    filter: drop-shadow(0 4px 6px rgba(212, 175, 55, 0.3));
+}
+
+.learning-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.learning-card {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 16px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.03),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+    position: relative;
+    overflow: hidden;
+    cursor: default;
+    backdrop-filter: blur(5px);
+}
+
+.learning-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow:
+        0 15px 35px rgba(26, 58, 92, 0.1),
+        0 5px 15px rgba(0, 0, 0, 0.05),
+        inset 0 0 0 1px rgba(212, 175, 55, 0.3);
+    border-color: rgba(212, 175, 55, 0.4);
+}
+
+.card-icon-wrapper {
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
+    background: linear-gradient(135deg, #f0f4f8 0%, #e1e8ed 100%);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.learning-card:hover .card-icon-wrapper {
+    background: linear-gradient(135deg, #1a3a5c 0%, #2c5282 100%);
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 8px 20px rgba(26, 58, 92, 0.3);
+}
+
+.card-icon-wrapper i {
+    font-size: 1.6em;
+    color: #2c5282;
+    transition: all 0.4s ease;
+}
+
+.learning-card:hover .card-icon-wrapper i {
+    color: #d4af37;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.card-text {
+    color: #1a3a5c;
+    font-size: 1.05em;
+    font-weight: 600;
+    line-height: 1.5;
+    transition: all 0.3s ease;
+}
+
+.learning-card:hover .card-text {
+    color: #0d1e30;
+    transform: translateX(5px);
+}
+
+/* Glow Effect */
+.card-glow {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.8),
+            transparent);
+    transform: skewX(-25deg);
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+.learning-card:hover .card-glow {
+    animation: shine 1.5s infinite;
+}
+
+@keyframes shine {
+    0% {
+        left: -100%;
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        left: 200%;
+        opacity: 0;
+    }
+}
+
+/* Entry Animation */
+@keyframes slideUpFade {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.learning-card {
+    opacity: 0;
+    animation: slideUpFade 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+/* Staggered Delay for Cards */
+.learning-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.learning-card:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+.learning-card:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.learning-card:nth-child(4) {
+    animation-delay: 0.25s;
+}
+
+.learning-card:nth-child(5) {
+    animation-delay: 0.3s;
+}
+
+.learning-card:nth-child(6) {
+    animation-delay: 0.35s;
+}
+
+.learning-card:nth-child(7) {
+    animation-delay: 0.4s;
+}
+
+.learning-card:nth-child(8) {
+    animation-delay: 0.45s;
+}
+
+.learning-card:nth-child(9) {
+    animation-delay: 0.5s;
+}
+
+.learning-card:nth-child(10) {
+    animation-delay: 0.55s;
+}
+
+.learning-card:nth-child(11) {
+    animation-delay: 0.6s;
+}
+
+.learning-card:nth-child(12) {
+    animation-delay: 0.65s;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+    .learning-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .learning-grid {
+        grid-template-columns: 1fr;
+    }
+}

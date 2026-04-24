@@ -1,0 +1,155 @@
+﻿<!DOCTYPE html>
+<html lang="az">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Korpuslar haqqında - Bakı Dövlət Universiteti</title>
+    <link rel="icon" type="image/png" href="static/images/bdu-logo.png">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <link rel="stylesheet" href="css/shared.css">
+    <link rel="stylesheet" href="css/pages/korpus.css">
+</head>
+
+<body data-title-key="page.title.korpus">
+    <div class="page active">
+        <div class="page-header">
+            <button class="back-button" onclick="window.location.href='index.html'">
+                <i class="fas fa-arrow-left"></i> <span data-i18n="common.back">Ana Səhifə</span>
+            </button>
+            <h2 data-i18n="page.korpus.h1">Korpuslar haqqında</h2>
+        </div>
+
+        <div class="korpus-container">
+            <!-- Korpus Selection Tabs -->
+            <div class="korpus-tabs">
+                <button class="korpus-tab active" onclick="showKorpus(0)">
+                    <span class="tab-number">0</span>
+                    <span data-i18n="korpus.tab.0">Əsas tədris binası</span>
+                </button>
+                <button class="korpus-tab" onclick="showKorpus(1)">
+                    <span class="tab-number">1</span>
+                    <span data-i18n="korpus.tab.1">1-ci Korpus</span>
+                </button>
+                <button class="korpus-tab" onclick="showKorpus(2)">
+                    <span class="tab-number">2</span>
+                    <span data-i18n="korpus.tab.2">2-ci Korpus</span>
+                </button>
+                <button class="korpus-tab" onclick="showKorpus(3)">
+                    <span class="tab-number">3</span>
+                    <span data-i18n="korpus.tab.3">3-cü Korpus</span>
+                </button>
+            </div>
+
+            <!-- Korpus 0 - Əsas tədris binası (Təbiət Elmləri) -->
+            <div id="korpus-0" class="korpus-content active">
+                <div class="korpus-hero">
+                    <h2><i class="fas fa-building"></i> <span data-i18n="korpus.0.h">Əsas tədris binası</span></h2>
+                    <p data-i18n="korpus.0.hero">Bakı Dövlət Universitetinin tarixi əsas binası - Təbiet elmləri fakültələrinin mərkəzi. 1936-cı
+                        ildə tikilmiş bu möhtəşəm bina universitetin simvoluna çevrilmişdir.</p>
+                </div>
+
+                <div class="faculty-grid" id="faculty-grid-0">
+                    <!-- Faculties will be populated by JavaScript -->
+                </div>
+
+                <div class="korpus-info-box">
+                    <h4><i class="fas fa-info-circle"></i> <span data-i18n="korpus.about">Korpus haqqında</span></h4>
+                    <p data-i18n="korpus.0.info">Əsas tədris binası BDU-nun ən qədim və ən böyük tədris binasıdır. Burada əsasən təbiet elmləri -
+                        fizika, kimya, biologiya və coğrafiya fakültələri yerləşir. Korpusda müasir laboratoriyalar,
+                        tədqiqat mərkəzləri və auditoriyalar fəaliyyət göstərir.</p>
+                </div>
+            </div>
+
+            <!-- Korpus 1 - 1-ci Korpus (Humanitar Elmlər I) -->
+            <div id="korpus-1" class="korpus-content">
+                <div class="korpus-hero" style="background: linear-gradient(135deg, #2c5282 0%, #3182ce 100%);">
+                    <h2><i class="fas fa-building"></i> <span data-i18n="korpus.1.h">1-ci Korpus</span></h2>
+                    <p data-i18n="korpus.1.hero">Humanitar elmlər fakültələrinin mərkəzi - Filologiya, Tarix və Jurnalistika. Azərbaycan dilinin,
+                        ədəbiyyatının və mədəniyyətinin öyrənildiyi mühüm tədris binası.</p>
+                </div>
+
+                <div class="faculty-grid" id="faculty-grid-1">
+                    <!-- Faculties will be populated by JavaScript -->
+                </div>
+
+                <div class="korpus-info-box">
+                    <h4><i class="fas fa-info-circle"></i> <span data-i18n="korpus.about">Korpus haqqında</span></h4>
+                    <p data-i18n="korpus.1.info">1-ci korpus humanitar elmlərin öyrənildiyi əsas məkandır. Burada Azərbaycan dili və ədəbiyyatı,
+                        xarici dillər, tarix və jurnalistika sahəsində mütəxəssislər yetişdirilir. Korpusda zəngin
+                        kitabxana fondu və tədqiqat şöbələri fəaliyyət göstərir.</p>
+                </div>
+            </div>
+
+            <!-- Korpus 2 - 2-ci Korpus (Humanitar Elmlər II) -->
+            <div id="korpus-2" class="korpus-content">
+                <div class="korpus-hero" style="background: linear-gradient(135deg, #285e61 0%, #319795 100%);">
+                    <h2><i class="fas fa-building"></i> <span data-i18n="korpus.2.h">2-ci Korpus</span></h2>
+                    <p data-i18n="korpus.2.hero">Sosial və humanitar elmlər kompleksi - Hüquq, İqtisadiyyat və Beynəlxalq münasibətlər
+                        fakültələri. Gələcəyin hüquqşünas və iqtisadçılarının hazırlandığı mərkəz.</p>
+                </div>
+
+                <div class="faculty-grid" id="faculty-grid-2">
+                    <!-- Faculties will be populated by JavaScript -->
+                </div>
+
+                <div class="korpus-info-box">
+                    <h4><i class="fas fa-info-circle"></i> <span data-i18n="korpus.about">Korpus haqqında</span></h4>
+                    <p data-i18n="korpus.2.info">2-ci korpusda sosial elmlər sahəsində təhsil verilir. Hüquq, iqtisadiyyat, beynəlxalq
+                        münasibətlər və sosial iş fakültələri burada yerləşir. Müasir konfrans zalları və mühazirə
+                        otaqları tələbələrin xidmətindədir.</p>
+                </div>
+            </div>
+
+            <!-- Korpus 3 - 3-cü Korpus (Dəqiq Elmlər) -->
+            <div id="korpus-3" class="korpus-content">
+                <div class="korpus-hero" style="background: linear-gradient(135deg, #553c9a 0%, #805ad5 100%);">
+                    <h2><i class="fas fa-building"></i> <span data-i18n="korpus.3.h">3-cü Korpus</span></h2>
+                    <p data-i18n="korpus.3.hero">Dəqiq elmlər və informasiya texnologiyaları mərkəzi - Riyaziyyat, Tətbiqi riyaziyyat, Kibernetika
+                        və İnformasiya texnologiyaları. Gələcəyin IT mütəxəssislərinin hazırlandığı innovativ məkan.</p>
+                </div>
+
+                <div class="faculty-grid" id="faculty-grid-3">
+                    <!-- Faculties will be populated by JavaScript -->
+                </div>
+
+                <div class="korpus-info-box">
+                    <h4><i class="fas fa-info-circle"></i> <span data-i18n="korpus.about">Korpus haqqında</span></h4>
+                    <p data-i18n="korpus.3.info">3-cü korpus BDU-nun ən müasir tədris binasıdır. Burada riyaziyyat, tətbiqi riyaziyyat, kompüter
+                        elmləri və informasiya texnologiyaları sahəsində kadrlar hazırlanır. TETYM, kompüter
+                        laboratoriyaları və innovasiya mərkəzləri bu korpusda yerləşir.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>
+            <span data-i18n="footer.copy">© <span id="footer-year"></span> Bakı Dövlət Universiteti. Bütün hüquqlar qorunur.</span>
+        </p>
+        <p class="footer-credits">
+            <span data-i18n="footer.designed">Designed by BDU TETYM</span>
+            <span class="footer-sep">•</span>
+            <button class="lang-switcher" id="langSwitcher" type="button" title="Language / Dil">
+                <i class="fas fa-globe"></i>
+                <span id="langCurrent">EN</span>
+            </button>
+        </p>
+    </footer>
+
+    <!-- Core (state, security, navigation) -->
+    <script src="js/i18n.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/kiosk-security.js"></script>
+    <script src="js/navigation.js"></script>
+
+    <!-- Page-specific -->
+    <script src="js/pages/korpus.js"></script>
+
+    <!-- Idle timer -->
+    <script src="js/idle-timer.js"></script>
+</body>
+
+</html>

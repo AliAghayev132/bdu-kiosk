@@ -1,0 +1,14 @@
+/* ==================================== Facts Page Inline (restored) ==================================== */
+.fact-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+@media (max-width: 1200px) {
+    #facts-grid { grid-template-columns: repeat(3, 1fr) !important; }
+}
+@media (max-width: 900px) {
+    #facts-grid { grid-template-columns: repeat(2, 1fr) !important; }
+}
+@media (max-width: 600px) {
+    #facts-grid { grid-template-columns: 1fr !important; }
+}

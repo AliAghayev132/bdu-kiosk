@@ -1,0 +1,69 @@
+/* ====================================
+   Eco Page Specific
+   ==================================== */
+
+.eco-hero {
+    border-left: 6px solid var(--success-green);
+}
+
+.eco-placeholder {
+    background: linear-gradient(135deg, #2d7a3e, #3d9a50);
+}
+
+.eco-features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.eco-card {
+    background: var(--white);
+    padding: 35px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+    text-align: center;
+    border-top: 4px solid var(--success-green);
+}
+
+.eco-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-5px);
+}
+
+.eco-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    background: linear-gradient(135deg, #2d7a3e, #3d9a50);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 38px;
+}
+
+.eco-card h3 {
+    font-size: 22px;
+    color: var(--success-green);
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.eco-card p {
+    font-size: 16px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.eco-info {
+    background: linear-gradient(135deg, #f0f9f3, #e6f5eb);
+    border-left-color: var(--success-green);
+}
+
+.eco-info h3 {
+    color: var(--success-green);
+}
+

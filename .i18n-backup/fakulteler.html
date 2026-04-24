@@ -1,0 +1,207 @@
+﻿<!DOCTYPE html>
+<html lang="az">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Fakültələr - Bakı Dövlət Universiteti</title>
+    <link rel="icon" type="image/png" href="static/images/bdu-logo.png">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <link rel="stylesheet" href="css/shared.css">
+    <link rel="stylesheet" href="css/pages/fakulteler.css">
+</head>
+
+<body data-title-key="page.title.fakulteler">
+    <!-- Page Header -->
+    <div class="page-header">
+        <button class="back-button" onclick="window.location.href='index.html'">
+            <i class="fas fa-arrow-left"></i> <span data-i18n="common.back">Ana Səhifə</span>
+        </button>
+        <h2 data-i18n="page.fakulteler.h1">Fakültələr</h2>
+    </div>
+
+    <!-- Page Content -->
+    <div class="fakulteler-page-content">
+        <!-- Hero Banner -->
+        <div class="fakulteler-hero">
+            <h2 data-i18n="fak.intro.h">Bakı Dövlət Universiteti fakültələri</h2>
+            <p>Universitet ilk tədris ilini 2 fakültə ilə – tarix-filologiya, tibb fakültələri və 1094 tələbə ilə
+                başlamışdır. Hazırda isə Bakı Dövlət Universitetdə <span id="hero-fakulte-count">16</span> fakültə
+                fəaliyyət göstərir və bu fakültələrdə
+                müxtəlif elmi istiqamətlərdə bakalavriat səviyyəsində <span id="hero-bakalavriat-count">74</span>
+                ixtisas, magistratura səviyyəsində isə <span id="hero-magistratura-count">227</span>
+                ixtisas üzrə mütəxəssislər hazırlanır.</p>
+        </div>
+
+        <!-- Main Grid -->
+        <div class="fakulteler-main-grid">
+            <!-- Təbiət və dəqiq elmlər fakültələri   -->
+            <section class="fakulte-section tebiet-section">
+                <div class="section-header">
+                    <div class="section-header-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h2 data-i18n="fak.cat.science">Təbiet və dəqiq elmlər fakültələri </h2>
+                </div>
+                <div class="fakulte-grid">
+                    <div class="fakulte-card" onclick="openFakulteModal('mexanika-riyaziyyat')">
+                        <h3 data-i18n="fak.mexanika">Mexanika-riyaziyyat fakültəsi</h3>
+                    </div>
+                    <div class="fakulte-card" onclick="openFakulteModal('biologiya')">
+                        <h3 data-i18n="fak.biologiya">Biologiya fakültəsi</h3>
+                    </div>
+                    <div class="fakulte-card" onclick="openFakulteModal('cografiya')">
+                        <h3 data-i18n="fak.cografiya">Coğrafiya fakültəsi</h3>
+                    </div>
+                    <div class="fakulte-card" onclick="openFakulteModal('tetbiqi-riyaziyyat')">
+                        <h3 data-i18n="fak.tetbiqi">Tətbiqi riyaziyyat və kibernetika fakültəsi</h3>
+                    </div>
+                    <div class="fakulte-card" onclick="openFakulteModal('fizika')">
+                        <h3 data-i18n="fak.fizika">Fizika fakültəsi</h3>
+                    </div>
+                    <div class="fakulte-card" onclick="openFakulteModal('kimya')">
+                        <h3 data-i18n="fak.kimya">Kimya fakültəsi</h3>
+                    </div>
+                    <div class="fakulte-card" onclick="openFakulteModal('ekologiya')">
+                        <h3 data-i18n="fak.ekologiya">Ekologiya və torpağşünaslıq fakültəsi</h3>
+                    </div>
+                    <div class="fakulte-card" onclick="openFakulteModal('geologiya')">
+                        <h3 data-i18n="fak.geologiya">Geologiya fakültəsi</h3>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Humanitar Fakültələr -->
+            <section class="fakulte-section humanitar-section">
+                <div class="section-header">
+                    <div class="section-header-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h2 data-i18n="fak.cat.humanities">Humanitar və sosial elmlər fakültələri </h2>
+                </div>
+                <div class="fakulte-grid">
+                    <div class="fakulte-card" onclick="openFakulteModal('tarix')">
+                        <h3 data-i18n="fak.tarix">Tarix fakültəsi</h3>
+                    </div>
+                    <div class="fakulte-card" onclick="openFakulteModal('beynelxalq')">
+                        <h3 data-i18n="fak.beynelxalq">Beynəlxalq münasibətlər və iqtisadiyyat fakültəsi</h3>
+                    </div>
+                    <div class="fakulte-card" onclick="openFakulteModal('huquq')">
+                        <h3 data-i18n="fak.huquq">Hüquq fakültəsi</h3>
+                    </div>
+                    <div class="fakulte-card" onclick="openFakulteModal('jurnalistika')">
+                        <h3 data-i18n="fak.jurnalistika">Jurnalistika fakültəsi</h3>
+                    </div>
+                    <div class="fakulte-card" onclick="openFakulteModal('serqsunasliq')">
+                        <h3 data-i18n="fak.serqsunasliq">Şərqşünaslıq fakültəsi</h3>
+                    </div>
+                    <div class="fakulte-card" onclick="openFakulteModal('sosial')">
+                        <h3 data-i18n="fak.sosial">Sosial elmlər və psixologiya fakültəsi</h3>
+                    </div>
+                    <div class="fakulte-card" onclick="openFakulteModal('informasiya')">
+                        <h3 data-i18n="fak.informasiya">İnformasiya və sənəd menecmenti fakültəsi</h3>
+                    </div>
+                    <div class="fakulte-card" onclick="openFakulteModal('filologiya')">
+                        <h3 data-i18n="fak.filologiya">Filologiya fakültəsi</h3>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Modal Overlay -->
+    <div class="fakulte-modal-overlay" id="fakulteModalOverlay" onclick="closeFakulteModal(event)">
+        <div class="fakulte-modal" onclick="event.stopPropagation()">
+            <!-- Modal Header -->
+            <div class="fakulte-modal-header">
+                <h2 id="modalTitle" data-i18n="fak.modal.title.placeholder">Fakültə Adı</h2>
+                <button class="fakulte-modal-close" onclick="closeFakulteModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <!-- Modal Body -->
+            <div class="fakulte-modal-body">
+                <!-- Image Carousel - Using same structure as main site -->
+                <div class="fakulte-carousel-container" id="fakulteCarouselContainer">
+                    <h3 class="carousel-title"><i class="fas fa-images"></i> <span data-i18n="fak.modal.gallery.h">Foto qalereya</span></h3>
+                    <div class="carousel coverflow-carousel" id="fakulteCarousel" data-carousel="fakulte">
+                        <div class="carousel-inner" id="fakulteCarouselInner">
+                            <!-- Carousel items will be dynamically inserted -->
+                        </div>
+                        <button class="carousel-prev" onclick="moveFakulteSlide(-1)">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="carousel-next" onclick="moveFakulteSlide(1)">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                        <div class="carousel-counter">
+                            <span id="currentSlideNum">1</span> / <span id="totalSlideNum">1</span>
+                        </div>
+                        <div class="carousel-indicators" id="fakulteCarouselIndicators">
+                            <!-- Indicators will be dynamically inserted -->
+                        </div>
+                    </div>
+                    <div class="carousel-caption" id="fakulteCarouselCaption">
+                        <p id="fakulteCaptionText"></p>
+                    </div>
+                </div>
+
+                <!-- Tabs -->
+                <div class="fakulte-tabs">
+                    <button class="fakulte-tab active" onclick="switchTab('tarixi', this)" data-i18n="fak.modal.tab.history">Tarixi</button>
+                    <button class="fakulte-tab" onclick="switchTab('bu-gun', this)" data-i18n="fak.modal.tab.today">Bu gün</button>
+                </div>
+
+                <!-- Tab Contents -->
+                <div id="tarixi-tab" class="fakulte-tab-content active">
+                    <div id="modalTarihiContent"></div>
+                </div>
+
+                <div id="bu-gun-tab" class="fakulte-tab-content">
+                    <div id="modalBuGunContent"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>
+            <span data-i18n="footer.copy">© <span id="footer-year"></span> Bakı Dövlət Universiteti. Bütün hüquqlar qorunur.</span>
+        </p>
+        <p class="footer-credits">
+<span data-i18n="footer.designed">Designed and Developed by BDU TETYM</span>
+            <span class="footer-sep">•</span>
+            <button class="lang-switcher" id="langSwitcher" type="button" title="Language / Dil">
+                <i class="fas fa-globe"></i>
+                <span id="langCurrent">EN</span>
+            </button>
+        </p>
+    </footer>
+
+    <!-- Faculty data from MD files - pre-converted to JSON -->
+    <!-- Data -->
+    <script src="js/i18n.js"></script>
+    <script src="js/facts-loader.js"></script>
+    <script src="static/fakulteler-data.js"></script>
+    <script src="js/pages/fakulteler-images.js"></script>
+
+    <!-- Core (state, security, navigation) -->
+    <script src="js/app.js"></script>
+    <script src="js/kiosk-security.js"></script>
+    <script src="js/navigation.js"></script>
+
+    <!-- Carousels -->
+    <script src="js/carousel.js"></script>
+
+    <!-- Page-specific -->
+    <script src="js/pages/fakulteler.js"></script>
+
+    <!-- Idle timer -->
+    <script src="js/idle-timer.js"></script>
+</body>
+
+</html>

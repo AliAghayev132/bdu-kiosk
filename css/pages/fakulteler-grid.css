@@ -1,0 +1,204 @@
+/* ====================================
+   Faculties Page
+   ==================================== */
+
+.faculties-intro {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.faculties-intro h3 {
+    font-size: 32px;
+    color: var(--primary-blue);
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.faculties-intro p {
+    font-size: 18px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+.faculties-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.faculty-card {
+    background: var(--white);
+    padding: 30px 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.faculty-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-5px);
+    border-top: 4px solid var(--accent-gold);
+}
+
+.faculty-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 15px;
+    background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-gold);
+    font-size: 34px;
+}
+
+.faculty-card h4 {
+    font-size: 17px;
+    color: var(--primary-blue);
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+
+/* ====================================
+   Split Faculties Layout (New Design)
+   ==================================== */
+
+.faculties-split-container {
+    display: flex;
+    gap: 40px;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.faculties-column {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 24px;
+    padding: 35px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.faculties-column h3 {
+    text-align: center;
+    font-size: 26px;
+    color: var(--primary-blue);
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid var(--accent-gold);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 800;
+}
+
+.faculties-subgrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.faculty-card-new {
+    background: var(--white);
+    padding: 25px 20px;
+    border-radius: 18px;
+    box-shadow: var(--shadow-sm);
+    text-align: center;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    height: 100%;
+    min-height: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.faculty-card-new::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    transition: all 0.3s ease;
+}
+
+.faculties-column.natural .faculty-card-new::before {
+    background: #2d7a3e;
+}
+
+.faculties-column.humanities .faculty-card-new::before {
+    background: #c0392b;
+}
+
+.faculty-card-new:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-md);
+}
+
+.faculty-icon-new {
+    width: 65px;
+    height: 65px;
+    margin-bottom: 15px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    transition: all 0.3s ease;
+}
+
+/* Natural Sciences Coloring */
+.faculties-column.natural .faculty-icon-new {
+    color: #2d7a3e;
+    background: rgba(45, 122, 62, 0.1);
+}
+
+.faculties-column.natural .faculty-card-new:hover .faculty-icon-new {
+    background: #2d7a3e;
+    color: #ffffff;
+}
+
+/* Humanities Coloring */
+.faculties-column.humanities .faculty-icon-new {
+    color: #c0392b;
+    background: rgba(192, 57, 43, 0.1);
+}
+
+.faculties-column.humanities .faculty-card-new:hover .faculty-icon-new {
+    background: #c0392b;
+    color: #ffffff;
+}
+
+.faculty-card-new h4 {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--primary-blue);
+    line-height: 1.4;
+    margin: 0;
+}
+
+@media (max-width: 1024px) {
+    .faculties-split-container {
+        flex-direction: column;
+    }
+
+    .faculties-subgrid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .faculties-subgrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+

@@ -1,0 +1,249 @@
+
+        /* Korpus Page Specific Styles */
+        .korpus-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 60px;
+        }
+
+        .korpus-tabs {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .korpus-tab {
+            padding: 20px 40px;
+            background: rgba(255, 255, 255, 0.95);
+            color: #1a3a5c;
+            border: 3px solid #1a3a5c;
+            border-radius: 15px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .korpus-tab:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .korpus-tab.active {
+            background: linear-gradient(135deg, #1a3a5c, #2c5282);
+            color: #fff;
+            border-color: transparent;
+        }
+
+        .korpus-tab .tab-number {
+            width: 35px;
+            height: 35px;
+            background: #d4af37;
+            color: #1a3a5c;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.1em;
+        }
+
+        .korpus-tab.active .tab-number {
+            background: #d4af37;
+            color: #1a3a5c;
+        }
+
+        .korpus-content {
+            display: none;
+        }
+
+        .korpus-content.active {
+            display: block;
+            animation: fadeIn 0.4s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .korpus-hero {
+            background: linear-gradient(135deg, #1a3a5c 0%, #2c5282 100%);
+            padding: 40px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            color: #fff;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .korpus-hero::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 50%;
+        }
+
+        .korpus-hero h2 {
+            font-size: 2.2em;
+            margin-bottom: 15px;
+            color: #d4af37;
+        }
+
+        .korpus-hero p {
+            font-size: 1.2em;
+            opacity: 0.95;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .faculty-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .faculty-card {
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .faculty-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .faculty-card-header {
+            background: linear-gradient(135deg, #1a3a5c, #2c5282);
+            padding: 25px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .faculty-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(212, 175, 55, 0.2);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8em;
+            color: #d4af37;
+        }
+
+        .faculty-card-header h3 {
+            font-size: 1.3em;
+            margin: 0;
+            flex: 1;
+        }
+
+        .faculty-card-body {
+            padding: 25px;
+        }
+
+        .faculty-card-body p {
+            color: #444;
+            line-height: 1.8;
+            font-size: 1em;
+            margin: 0;
+        }
+
+        .faculty-details {
+            display: none;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+
+        .faculty-card.expanded .faculty-details {
+            display: block;
+        }
+
+        .faculty-stats {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        .faculty-stat {
+            background: #f5f7fa;
+            padding: 12px 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .faculty-stat-value {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: #1a3a5c;
+        }
+
+        .faculty-stat-label {
+            font-size: 0.85em;
+            color: #666;
+        }
+
+        .korpus-info-box {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(26, 58, 92, 0.1));
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 5px solid #d4af37;
+            margin-top: 30px;
+        }
+
+        .korpus-info-box h4 {
+            color: #1a3a5c;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .korpus-info-box p {
+            color: #444;
+            line-height: 1.8;
+        }
+
+        .expand-btn {
+            background: #d4af37;
+            color: #1a3a5c;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 15px;
+        }
+
+        .expand-btn:hover {
+            background: #1a3a5c;
+            color: #fff;
+        }
+    

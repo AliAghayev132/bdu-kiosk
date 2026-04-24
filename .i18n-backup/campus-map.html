@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İnteraktiv Kampus Xəritəsi - BDU</title>
+    <link rel="icon" type="image/png" href="images/bdu-logo.png">
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <link rel="stylesheet" href="static/campus-map.css">
+    <link rel="stylesheet" href="css/shared.css">
+</head>
+<body data-title-key="page.title.campus">
+    <!-- Header -->
+    <header class="map-header">
+        <a href="index.html" class="back-btn">
+            <i class="fas fa-arrow-left"></i>
+            <span data-i18n="common.back">Ana Səhifə</span>
+        </a>
+        <div class="header-title">
+            <div class="title-text">
+                <h1 data-i18n="page.campus.h1">İnteraktiv Kampus Xəritəsi</h1>
+                <p data-i18n="page.campus.sub">Bakı Dövlət Universiteti</p>
+            </div>
+        </div>
+        <div class="header-actions">
+            <button id="toggleEditMode" class="edit-btn" title="Redaktə rejimi" style="display:none">
+                <i class="fas fa-edit"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="map-main">
+        <!-- Map Container -->
+        <div class="map-wrapper">
+            <div class="map-container" id="mapContainer">
+                <img src="static/images/campus-map.webp" alt="BDU Kampus Xəritəsi" id="campusMap" class="campus-map-image" onerror="this.onerror=null;this.style.display='none'">
+                <svg id="mapOverlay" class="map-overlay" viewBox="0 0 1000 450" preserveAspectRatio="xMidYMid meet">
+                    <!-- Building shapes will be rendered here -->
+                </svg>
+                <!-- Xarı Bülbül Video -->
+                <video class="xari-bulbul-video" autoplay loop muted playsinline>
+                    <source src="static/videos/xari-bulbul.webm" type="video/webm">
+                </video>
+                <!-- Abidə Video -->
+                <!-- <video class="abide-video" autoplay loop muted playsinline>
+                    <source src="static/videos/abide.webm" type="video/webm">
+                </video> -->
+            </div>
+            
+            <!-- Building Legend (overlay on map) -->
+            <div class="legend-section">
+                <h3 class="legend-title">
+                    <i class="fas fa-building"></i>
+                    <span data-i18n="campus.legend">Binalar</span>
+                </h3>
+                <div class="legend-grid" id="buildingLegend">
+                    <!-- Building buttons will be rendered here -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Building Info Modal -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-container" id="buildingModal">
+            <div class="modal-header">
+                <div class="modal-title">
+                    <i class="fas fa-building-columns" id="modalIcon"></i>
+                    <h2 id="modalBuildingName" data-i18n="campus.modal.placeholder.name">Bina Adı</h2>
+                </div>
+                <button class="modal-close" id="modalClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-content">
+                <!-- Image Carousel -->
+                <div class="carousel-container" id="carouselContainer">
+                    <div class="carousel-wrapper">
+                        <div class="carousel-slides" id="carouselSlides">
+                            <!-- Slides will be rendered here -->
+                        </div>
+                        <button class="carousel-btn carousel-prev" id="carouselPrev">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="carousel-btn carousel-next" id="carouselNext">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                    <div class="carousel-caption" id="carouselCaption"></div>
+                    <div class="carousel-dots" id="carouselDots">
+                        <!-- Dots will be rendered here -->
+                    </div>
+                </div>
+                
+                <!-- Description -->
+                <div class="modal-description">
+                    <h4><i class="fas fa-info-circle"></i> <span data-i18n="campus.modal.desc">Təsvir</span></h4>
+                    <p id="modalDescription" data-i18n="campus.modal.placeholder.desc">Bina təsviri</p>
+                </div>
+            </div>
+            <div class="modal-footer" style="display:none">
+                <button class="edit-building-btn" id="editBuildingBtn">
+                    <i class="fas fa-edit"></i>
+                    Redaktə et
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Panel (Hidden by default) -->
+    <div class="edit-panel" id="editPanel">
+        <div class="edit-panel-header">
+            <h3><i class="fas fa-tools"></i> Redaktə Paneli</h3>
+            <button class="close-edit-panel" id="closeEditPanel">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="edit-panel-content">
+            <div class="edit-tools">
+                <h4>Forma Əlavə Et</h4>
+                <div class="tool-buttons">
+                    <button class="tool-btn" data-shape="rect" title="Düzbucaq">
+                        <i class="fas fa-square"></i>
+                        <span>Düzbucaq</span>
+                    </button>
+                    <button class="tool-btn" data-shape="circle" title="Dairə">
+                        <i class="fas fa-circle"></i>
+                        <span>Dairə</span>
+                    </button>
+                    <button class="tool-btn" data-shape="polygon" title="Çoxbucaq">
+                        <i class="fas fa-draw-polygon"></i>
+                        <span>Çoxbucaq</span>
+                    </button>
+                </div>
+            </div>
+            <div class="edit-actions">
+                <button class="action-btn delete-btn" id="deleteShape" disabled>
+                    <i class="fas fa-trash"></i>
+                    Seçilmişi Sil
+                </button>
+                <button class="action-btn save-btn" id="saveChanges">
+                    <i class="fas fa-save"></i>
+                    Yadda Saxla
+                </button>
+            </div>
+            <div class="edit-export">
+                <button class="export-btn" id="exportJson">
+                    <i class="fas fa-download"></i>
+                    JSON İxrac Et
+                </button>
+                <button class="import-btn" id="importJson">
+                    <i class="fas fa-upload"></i>
+                    JSON İdxal Et
+                </button>
+                <button class="save-as-default-btn" id="saveAsDefaultBtn">
+                    <i class="fas fa-code"></i>
+                    Əsas Overlay Kimi Saxla
+                </button>
+                <input type="file" id="importFileInput" accept=".json" style="display: none;">
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Building Modal -->
+    <div class="edit-modal-overlay" id="editModalOverlay">
+        <div class="edit-modal-container">
+            <div class="edit-modal-header">
+                <h3><i class="fas fa-edit"></i> Bina Məlumatlarını Redaktə Et</h3>
+                <button class="edit-modal-close" id="editModalClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="edit-modal-content">
+                <div class="form-group">
+                    <label for="editBuildingName">Bina Adı</label>
+                    <input type="text" id="editBuildingName" placeholder="Bina adını daxil edin">
+                </div>
+                <div class="form-group">
+                    <label for="editBuildingDescription">Təsvir</label>
+                    <textarea id="editBuildingDescription" rows="4" placeholder="Təsvir daxil edin"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="editBuildingImage">Əsas Şəkil URL</label>
+                    <input type="text" id="editBuildingImage" placeholder="Şəkil URL-i daxil edin">
+                </div>
+            </div>
+            <div class="edit-modal-footer">
+                <button class="cancel-btn" id="editModalCancel">Ləğv Et</button>
+                <button class="save-btn" id="editModalSave">Yadda Saxla</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <span id="toastMessage">Əməliyyat uğurla yerinə yetirildi</span>
+    </div>
+
+    <footer class="footer">
+        <p>
+            <span data-i18n="footer.copy">© <span id="footer-year"></span> Bakı Dövlət Universiteti. Bütün hüquqlar qorunur.</span>
+        </p>
+        <p class="footer-credits">
+            <span data-i18n="footer.designed">Designed by BDU TETYM</span>
+            <span class="footer-sep">•</span>
+            <button class="lang-switcher" id="langSwitcher" type="button" title="Language / Dil">
+                <i class="fas fa-globe"></i>
+                <span id="langCurrent">EN</span>
+            </button>
+        </p>
+    </footer>
+
+    <script src="js/i18n.js"></script>
+    <script src="static/campus-map.js"></script>
+</body>
+</html>
