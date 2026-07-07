@@ -63,6 +63,9 @@
         }
     }
 
+    // Expose for facts-loader.js, which triggers the initial animation
+    window.animateFactsCounters = animateFactsCounters;
+
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', init);
     } else {

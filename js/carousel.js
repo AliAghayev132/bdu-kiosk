@@ -33,12 +33,13 @@ function moveSlide(carouselId, direction) {
 
     // Prevent rapid succession of slides
     if (carouselStates[carouselId].isAnimating) return;
-    carouselStates[carouselId].isAnimating = true;
 
     const items = carousel.querySelectorAll('.carousel-item');
     const indicators = carousel.querySelectorAll('.indicator');
 
     if (items.length === 0) return;
+
+    carouselStates[carouselId].isAnimating = true;
 
     // Calculate new slide index
     let newIndex = carouselStates[carouselId].currentSlide + direction;
@@ -206,6 +207,7 @@ function initializeAllCarousels() {
     carousels.forEach(carousel => {
         const carouselId = carousel.getAttribute('data-carousel');
         initCarousel(carouselId);
+        const state = carouselStates[carouselId];
 
         // Check if carousel has only one image - hide nav buttons
         const items = carousel.querySelectorAll('.carousel-item');
@@ -216,26 +218,39 @@ function initializeAllCarousels() {
             carousel.classList.remove('single-image');
         }
 
-        // Initialize coverflow classes for first slide
-        updateCoverflowClasses(items, 0, indicators);
+        // Items may have been rebuilt (dynamic-carousel.js) — keep index valid
+        if (state.currentSlide >= items.length) state.currentSlide = 0;
 
-        // Add click handlers to side cards for navigation
-        items.forEach((item, index) => {
-            item.addEventListener('click', () => {
-                // If clicking on prev card, go to previous
-                if (item.classList.contains('prev')) {
-                    moveSlide(carouselId, -1);
-                }
-                // If clicking on next card, go to next
-                else if (item.classList.contains('next')) {
-                    moveSlide(carouselId, 1);
-                }
-                // If clicking on active card, do nothing (or could open modal)
-            });
+        // Initialize coverflow classes for the current slide
+        updateCoverflowClasses(items, state.currentSlide, indicators);
+        updateCounter(carouselId, carousel);
+
+        // Autoplay only while the carousel's page is visible — hidden pages
+        // otherwise keep 4s timers mutating off-screen DOM around the clock
+        const page = carousel.closest('.page');
+        if (!page || page.classList.contains('active')) {
+            startAutoplay(carouselId);
+        } else {
+            stopAutoplay(carouselId);
+        }
+
+        // Bind interaction handlers once per carousel element — showPage()
+        // re-runs this on every navigation, so guard against re-binding
+        if (carousel.dataset.carouselBound === 'true') return;
+        carousel.dataset.carouselBound = 'true';
+
+        // Delegated click handler: works for side-card navigation and
+        // survives .carousel-inner rebuilds by dynamic-carousel.js
+        carousel.addEventListener('click', (e) => {
+            const item = e.target.closest('.carousel-item');
+            if (!item || !carousel.contains(item)) return;
+            if (item.classList.contains('prev')) {
+                moveSlide(carouselId, -1);
+            } else if (item.classList.contains('next')) {
+                moveSlide(carouselId, 1);
+            }
+            // Clicking the active card does nothing (could open modal)
         });
-
-        // Start autoplay
-        startAutoplay(carouselId);
 
         // Instagram-style pause: pause on hover/touch-hold, resume on leave/release
         carousel.addEventListener('mouseenter', () => pauseAutoplay(carouselId));
@@ -262,23 +277,26 @@ function initializeAllCarousels() {
         }, { passive: true });
     });
 
-    // Keyboard navigation
-    document.addEventListener('keydown', (e) => {
-        // Find active carousel based on current page
-        const activePage = document.querySelector('.page.active');
-        if (!activePage) return;
+    // Keyboard navigation — bind a single document-level listener
+    if (!initializeAllCarousels.keydownBound) {
+        initializeAllCarousels.keydownBound = true;
+        document.addEventListener('keydown', (e) => {
+            // Find active carousel based on current page
+            const activePage = document.querySelector('.page.active');
+            if (!activePage) return;
 
-        const activeCarousel = activePage.querySelector('[data-carousel]');
-        if (!activeCarousel) return;
+            const activeCarousel = activePage.querySelector('[data-carousel]');
+            if (!activeCarousel) return;
 
-        const carouselId = activeCarousel.getAttribute('data-carousel');
+            const carouselId = activeCarousel.getAttribute('data-carousel');
 
-        if (e.key === 'ArrowLeft') {
-            moveSlide(carouselId, -1);
-        } else if (e.key === 'ArrowRight') {
-            moveSlide(carouselId, 1);
-        }
-    });
+            if (e.key === 'ArrowLeft') {
+                moveSlide(carouselId, -1);
+            } else if (e.key === 'ArrowRight') {
+                moveSlide(carouselId, 1);
+            }
+        });
+    }
 }
 
 /**

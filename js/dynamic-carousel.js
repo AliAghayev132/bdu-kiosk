@@ -9,7 +9,9 @@
 const carouselConfig = {
     'history': 'static/images/history',
     'tetym': 'static/images/tetym',
+    'tetym-inn': 'static/images/tetym',
     'eco': 'static/images/eco',
+    'eco-inn': 'static/images/eco',
     'clean-charge': 'static/images/clean-charge',
     'drl': 'static/images/drl',
     'heyder-aliyev': 'static/images/heyder-aliyev',

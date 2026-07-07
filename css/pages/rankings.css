@@ -141,7 +141,7 @@
 }
 
 .ranking-item-title::before {
-    content: 'Ôû©';
+    content: '\25B8';
     color: var(--accent-gold);
     font-weight: 700;
     flex-shrink: 0;

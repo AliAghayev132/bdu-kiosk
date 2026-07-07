@@ -31,7 +31,6 @@ window.fakulteImagesData = {
     "biologiya": {
         "images": [
             { "file": "Biologiya elmləri namizədi Həbibə Qasımova Biologiya kabinetində tələbələrlə məşğələ keçərkən (1952).jpg", "caption": "Biologiya elmləri namizədi Həbibə Qasımova Biologiya kabinetində tələbələrlə məşğələ keçərkən (1952)" },
-            { "file": "Biologiya fakültəsinin bir qrup aspirantı akademik Abdulla Qarayevin rəhbərliyi ilə İnsanların və heyvanların fiziologiyası kafedrasının əməliyyatxanasında təcrübə keçərkən (1953).jpg", "caption": "Biologiya fakültəsinin bir qrup aspirantı akademik Abdulla Qarayevin rəhbərliyi ilə İnsanların və heyvanların fiziologiyası kafedrasının əməliyyatxanasında təcrübə keçərkən (1953)" },
             { "file": "Biologiya fakültəsinin II kurs tələbələri Onurğalılar zoologiyası fənninin laboratoriya dərsində (2023).jpg", "caption": "Biologiya fakültəsinin II kurs tələbələri Onurğalılar zoologiyası fənninin laboratoriya dərsində (2023)" },
             { "file": "Biologiya fakültəsinin III kurs tələbələri bitki fiziologiyası fənninin laboratoriya dərsində (2024).jpeg", "caption": "Biologiya fakültəsinin III kurs tələbələri bitki fiziologiyası fənninin laboratoriya dərsində (2024)" },
             { "file": "Biologiya fakültəsinin tələbələri dosent Pünhan Əfəndiyevin rəhbərliyi ilə çöl təcrübəsində (1967).jpg", "caption": "Biologiya fakültəsinin tələbələri dosent Pünhan Əfəndiyevin rəhbərliyi ilə çöl təcrübəsində (1967)" },
@@ -72,7 +71,7 @@ window.fakulteImagesData = {
             { "file": "5.jpg", "caption": "Kimya fakültəsinin tələbələri təcrübə zamanı (2025)" },
             { "file": "6.jpg", "caption": "Professor Vladimir Tixomirov tələbələri ilə (1942)" },
             { "file": "7.jpg", "caption": "Qeyri-Üzvi kimya kafedrasının müdiri, professor Sadıq Hüseynov kimya fakültəsinin 1-ci kurs tələbələrinə mühazirədə (1950)" },
-            { "file": "8.png", "caption": "Rektor akademik Yusif Məmmədəliyev müdafiə şurasının iclasında (1955)" }
+            { "file": "8.webp", "caption": "Rektor akademik Yusif Məmmədəliyev müdafiə şurasının iclasında (1955)" }
         ]
     },
     "ekologiya": {
@@ -103,10 +102,10 @@ window.fakulteImagesData = {
             { "file": "1.jpeg", "caption": "Akademik E. Sumbatzadə Tarix fakültəsində dərs zamanı 1961-ci il" },
             { "file": "2.jpeg", "caption": "Professor Məmmədəli Hüseynov yeni arxeoloji tapıntılar barədə məlumat verir (1980)" },
             { "file": "3.jpg", "caption": "Qərbi Azərbaycan real tarix və erməni saxtakarlığı adlı tədbir (2025)" },
-            { "file": "4.jfif", "caption": "Tarix fakültəsində elmi seminar (2025)" },
-            { "file": "5.jfif", "caption": "Tarix fakültəsində mühazirə (2025)" },
+            { "file": "4.jpg", "caption": "Tarix fakültəsində elmi seminar (2025)" },
+            { "file": "5.jpg", "caption": "Tarix fakültəsində mühazirə (2025)" },
             { "file": "6.jpg", "caption": "Tarix fakültəsinin tələbələri diplom müdafiəsi zamanı (1950)" },
-            { "file": "7.jfif", "caption": "Tarix fakültəsinin tələbələri elmi diskussiyada" },
+            { "file": "7.jpg", "caption": "Tarix fakültəsinin tələbələri elmi diskussiyada" },
             { "file": "8.jpeg", "caption": "Tarix-filologiya fakültəsinin ilk məzunları (1919-1922)" }
         ]
     },

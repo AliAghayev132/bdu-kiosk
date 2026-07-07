@@ -1554,9 +1554,10 @@ function saveEditedBuilding() {
         building.description = editBuildingDescription.value;
         building.image = editBuildingImage.value || 'static/images/default.jpg';
 
-        if (building.galleries && building.galleries.length > 0) {
-            building.galleries[0].url = building.image;
-        } else if (building.galleries.length === 0) {
+        if (Array.isArray(building.galleries) && building.galleries.length > 0) {
+            // Entries may be plain strings or {url, caption} objects
+            building.galleries[0] = { url: building.image, caption: building.name };
+        } else {
             building.galleries = [{ url: building.image, caption: building.name }];
         }
 

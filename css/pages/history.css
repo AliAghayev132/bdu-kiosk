@@ -182,7 +182,7 @@
 }
 
 .info-box ul li::before {
-    content: 'Ôû©';
+    content: '\25B8';
     position: absolute;
     left: 0;
     color: var(--accent-gold);
