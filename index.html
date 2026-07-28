@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="css/pages/facts.css">
     <link rel="stylesheet" href="css/learning-grid.css">
     <link rel="stylesheet" href="css/flip-cards.css">
+    <link rel="stylesheet" href="css/home-video.css">
 </head>
 
 <body data-title-key="page.title.home">
@@ -55,74 +56,156 @@
         </header>
 
         <main class="main-content">
+          <div class="home-split">
+            <!-- ===== SOL TƏRƏF: naviqasiya düymələri ===== -->
+            <div class="home-left">
 
-            <div class="navigation-wrapper">
-                <div class="sidebar-section sidebar-left">
-                    <button class="nav-button sidebar-button-vertical" onclick="window.location.href='campus-map.html'">
-                        <div class="nav-icon">
-                            <img src="icons/kampus_ve_tedris_binalari.png" alt="Kampus və Tədris Binaları"
-                                style="width: 100%; height: 100%; object-fit: contain;">
-                        </div>
-                        <h3 data-i18n="nav.campus">Kampus və tədris binaları</h3>
-                    </button>
-                </div>
-
-                <div class="navigation-grid">
-                    <button class="nav-button" onclick="showPage('history-page')">
-                        <div class="nav-icon">
-                            <i class="fas fa-landmark"></i>
-                        </div>
-                        <h3 data-i18n="nav.history">BDU-nun tarixi</h3>
-                    </button>
-
-                    <button class="nav-button" onclick="showPage('heyder-aliyev-page')">
-                        <div class="nav-icon">
-                            <img src="static/images/gerb.webp" alt="Azərbaycan Gerbi"
-                                style="width: 50px; height: 50px; object-fit: contain;">
-                        </div>
-                        <h3 data-i18n="nav.heyder">Heydər Əliyev və BDU</h3>
-                    </button>
-
-                    <button class="nav-button" onclick="showPage('prezident-page')">
-                        <div class="nav-icon">
-                            <img src="static/images/gerb.webp" alt="Azərbaycan Gerbi"
-                                style="width: 50px; height: 50px; object-fit: contain;">
-                        </div>
-                        <h3 data-i18n="nav.prezident">Azərbaycan Prezidenti və BDU</h3>
-                    </button>
-
-                    <button class="nav-button" onclick="showPage('rankings-page')">
-                        <div class="nav-icon">
-                            <i class="fas fa-trophy"></i>
-                        </div>
-                        <h3 data-i18n="nav.rankings">BDU-nun reytinqlərdə mövqeyi</h3>
-                    </button>
-
-                    <button class="nav-button" onclick="showPage('facts-page')">
-                        <div class="nav-icon">
-                            <i class="fas fa-chart-pie"></i>
-                        </div>
-                        <h3 data-i18n="nav.facts">Rəqəmlər və faktlar</h3>
-                    </button>
-
-                    <button class="nav-button" onclick="showPage('innovation-page')">
-                        <div class="nav-icon">
-                            <i class="fas fa-lightbulb"></i>
-                        </div>
-                        <h3 data-i18n="nav.innovation">İnnovasiya</h3>
-                    </button>
-                </div>
-
-                <div class="sidebar-section sidebar-right">
-                    <button class="nav-button sidebar-button-vertical" onclick="window.location.href='fakulteler.html'">
-                        <div class="nav-icon">
-                            <img src="icons/fakulteler.png" alt="Fakültələr"
-                                style="width: 100%; height: 100%; object-fit: contain;">
-                        </div>
-                        <h3 data-i18n="nav.fakulteler">Fakültələr</h3>
-                    </button>
-                </div>
+            <div class="navigation-grid">
+                <button class="nav-button" onclick="showPage('heyder-aliyev-page')">
+                    <div class="nav-icon">
+                        <img src="static/images/gerb.webp" alt="Azərbaycan Gerbi"
+                            style="width: 50px; height: 50px; object-fit: contain;">
+                    </div>
+                    <h3 data-i18n="nav.heyder">Heydər Əliyev və BDU</h3>
+                </button>
+                <button class="nav-button" onclick="showPage('prezident-page')">
+                    <div class="nav-icon">
+                        <img src="static/images/gerb.webp" alt="Azərbaycan Gerbi"
+                            style="width: 50px; height: 50px; object-fit: contain;">
+                    </div>
+                    <h3 data-i18n="nav.prezident">Azərbaycan Prezidenti və BDU</h3>
+                </button>
+                <button class="nav-button" onclick="window.location.href='campus-map.html'">
+                    <div class="nav-icon">
+                        <img src="icons/kampus_ve_tedris_binalari.png" alt="Kampus və Tədris Binaları"
+                            style="width: 100%; height: 100%; object-fit: contain;">
+                    </div>
+                    <h3 data-i18n="nav.campus">Kampus və tədris binaları</h3>
+                </button>
+                <button class="nav-button" onclick="showPage('history-page')">
+                    <div class="nav-icon">
+                        <i class="fas fa-landmark"></i>
+                    </div>
+                    <h3 data-i18n="nav.history">BDU-nun tarixi</h3>
+                </button>
+                <button class="nav-button" onclick="showPage('rankings-page')">
+                    <div class="nav-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3 data-i18n="nav.rankings">BDU-nun reytinqlərdə mövqeyi</h3>
+                </button>
+                <button class="nav-button" onclick="showPage('facts-page')">
+                    <div class="nav-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h3 data-i18n="nav.facts">Rəqəmlər və faktlar</h3>
+                </button>
+                <button class="nav-button" onclick="showPage('innovation-page')">
+                    <div class="nav-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3 data-i18n="nav.innovation">İnnovasiya</h3>
+                </button>
+                <button class="nav-button" onclick="window.location.href='fakulteler.html'">
+                    <div class="nav-icon">
+                        <img src="icons/fakulteler.png" alt="Fakültələr"
+                            style="width: 100%; height: 100%; object-fit: contain;">
+                    </div>
+                    <h3 data-i18n="nav.fakulteler">Fakültələr</h3>
+                </button>
             </div>
+
+            </div><!-- /.home-left -->
+
+            <!-- ===== SAĞ TƏRƏF: tanıtım videosu ===== -->
+            <aside class="home-right">
+                <section class="video-panel">
+                    <div class="video-stage" id="videoStage">
+                        <video id="promoVideo" class="promo-video" src="video.mp4" preload="metadata"
+                            playsinline webkit-playsinline data-autoplay="false"></video>
+
+                        <div class="video-spinner"></div>
+                        <div class="video-toast" id="videoToast"></div>
+
+                        <div class="video-poster" id="videoPoster">
+                            <img src="static/images/bdu-logo.png" alt="BDU" class="video-poster-logo">
+                            <button class="video-bigplay" id="videoBigPlay" type="button"
+                                data-i18n-attr="title:video.play" title="Oynat">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+
+                        <div class="video-controls">
+                            <div class="video-progress" id="videoProgress">
+                                <div class="video-progress-buffer" id="videoBuffer"></div>
+                                <div class="video-progress-played" id="videoPlayed">
+                                    <span class="video-progress-knob"></span>
+                                </div>
+                            </div>
+
+                            <div class="video-buttons">
+                                <button class="vbtn" id="btnBack10" type="button"
+                                    data-i18n-attr="title:video.back10" title="10 saniyə geri">
+                                    <i class="fas fa-rotate-left"></i><span class="vbtn-sec">10</span>
+                                </button>
+
+                                <button class="vbtn vbtn-primary" id="btnPlay" type="button"
+                                    data-i18n-attr="title:video.playpause" title="Oynat / Dayandır">
+                                    <i class="fas fa-play"></i>
+                                </button>
+
+                                <button class="vbtn" id="btnFwd10" type="button"
+                                    data-i18n-attr="title:video.fwd10" title="10 saniyə irəli">
+                                    <i class="fas fa-rotate-right"></i><span class="vbtn-sec">10</span>
+                                </button>
+
+                                <button class="vbtn" id="btnStop" type="button"
+                                    data-i18n-attr="title:video.stop" title="Dayandır və əvvələ qaytar">
+                                    <i class="fas fa-stop"></i>
+                                </button>
+
+                                <span class="video-time"><span id="vCur">0:00</span> / <span id="vDur">0:00</span></span>
+
+                                <span class="video-spacer"></span>
+
+                                <div class="video-volume">
+                                    <button class="vbtn" id="btnMute" type="button"
+                                        data-i18n-attr="title:video.mute" title="Səsi bağla">
+                                        <i class="fas fa-volume-high"></i>
+                                    </button>
+                                    <button class="vbtn" id="btnVolDown" type="button"
+                                        data-i18n-attr="title:video.voldown" title="Səsi azalt">
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+                                    <input type="range" id="volRange" min="0" max="100" value="100"
+                                        aria-label="Səs səviyyəsi">
+                                    <button class="vbtn" id="btnVolUp" type="button"
+                                        data-i18n-attr="title:video.volup" title="Səsi artır">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                    <span class="vol-val" id="volVal">100%</span>
+                                </div>
+
+                                <button class="vbtn vbtn-toggle is-on" id="btnLoop" type="button"
+                                    data-i18n-attr="title:video.loop" title="Təkrar (loop)">
+                                    <i class="fas fa-repeat"></i>
+                                </button>
+
+                                <button class="vbtn" id="btnFull" type="button"
+                                    data-i18n-attr="title:video.fullscreen" title="Tam ekran">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="video-caption">
+                        <i class="fas fa-film"></i>
+                        <span data-i18n="video.promo.title">Bakı Dövlət Universitetinin tanıtım çarxı</span>
+                    </h3>
+                </section>
+            </aside>
+          </div><!-- /.home-split -->
         </main>
 
         <footer class="footer">
@@ -4379,6 +4462,9 @@
     <script src="js/pages/facts-counter.js"></script>
     <script src="js/pages/flip-cards.js"></script>
     <script src="js/pages/innovation-tabs.js"></script>
+
+    <!-- Ana səhifə tanıtım videosu (navigation.js-dən SONRA yüklənməlidir) -->
+    <script src="js/video-player.js"></script>
 
     <!-- Idle timer (auto-return after inactivity) -->
     <script src="js/idle-timer.js"></script>

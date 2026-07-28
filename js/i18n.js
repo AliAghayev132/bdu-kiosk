@@ -52,6 +52,19 @@
             'nav.innovation': 'İnnovasiya',
             'nav.fakulteler': 'Fakültələr',
 
+            // ===== Tanıtım videosu =====
+            'video.promo.title': 'Bakı Dövlət Universitetinin tanıtım çarxı',
+            'video.play': 'Oynat',
+            'video.playpause': 'Oynat / Dayandır',
+            'video.stop': 'Dayandır və əvvələ qaytar',
+            'video.back10': '10 saniyə geri',
+            'video.fwd10': '10 saniyə irəli',
+            'video.mute': 'Səsi bağla / aç',
+            'video.volup': 'Səsi artır',
+            'video.voldown': 'Səsi azalt',
+            'video.loop': 'Təkrar (loop)',
+            'video.fullscreen': 'Tam ekran',
+
             // ===== Page headers =====
             'page.history.h1': 'BDU-nun Tarixi',
             'page.heyder.h1': 'Heydər Əliyev və BDU',
@@ -190,6 +203,19 @@
             'nav.facts': 'Figures & Facts',
             'nav.innovation': 'Innovation',
             'nav.fakulteler': 'Faculties',
+
+            // ===== Promotional video =====
+            'video.promo.title': 'Promotional video of Baku State University',
+            'video.play': 'Play',
+            'video.playpause': 'Play / Pause',
+            'video.stop': 'Stop and rewind',
+            'video.back10': 'Back 10 seconds',
+            'video.fwd10': 'Forward 10 seconds',
+            'video.mute': 'Mute / Unmute',
+            'video.volup': 'Volume up',
+            'video.voldown': 'Volume down',
+            'video.loop': 'Loop',
+            'video.fullscreen': 'Fullscreen',
 
             // ===== Page headers =====
             'page.history.h1': 'BSU History',

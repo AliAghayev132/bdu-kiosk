@@ -1,0 +1,610 @@
+/* ==========================================================================
+   BDU Kiosk - Ana səhifə: sol tərəf kompakt naviqasiya + sağ tərəf video
+   Bu fayl shared.css-dən SONRA yüklənir və yalnız ana səhifəyə təsir edir.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1) Ana konteyner iki sütuna bölünür
+   -------------------------------------------------------------------------- */
+
+#main-page .main-content {
+    /* Header ilə footer arasındakı boşluq (dəyərlər video-player.js tərəfindən yenilənir) */
+    --header-h: var(--bdu-header-h, 174px);
+    --footer-h: var(--bdu-footer-h, 78px);
+    --home-max-h: calc(100vh - var(--header-h) - var(--footer-h) - 32px);
+    width: 96%;
+    max-width: 2300px;
+    top: calc(var(--header-h) + 16px);
+    bottom: calc(var(--footer-h) + 16px);
+    height: auto;
+    padding: 0 28px;
+    overflow: visible;
+    /* Məzmun şaquli olaraq tam ortada */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-split {
+    display: flex;
+    align-items: stretch;
+    /* <-- iki sütun eyni hündürlükdə */
+    gap: 26px;
+    height: auto;
+    width: 100%;
+}
+
+.home-left,
+.home-right {
+    flex: 1 1 50%;
+    min-width: 0;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+}
+
+
+/* --------------------------------------------------------------------------
+   2) Naviqasiya düymələri - təxminən yarı ölçüdə (kompakt)
+   -------------------------------------------------------------------------- */
+
+.home-left .navigation-grid {
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 14px;
+    margin-bottom: 0;
+}
+
+.home-left .nav-button {
+    padding: 14px 10px;
+    border-radius: 12px;
+    justify-content: center;
+    min-height: 0;
+}
+
+.home-left .nav-button::before {
+    height: 3px;
+}
+
+.home-left .nav-icon {
+    width: 54px;
+    height: 54px;
+    border-radius: 13px;
+    font-size: 24px;
+    margin: 0 auto 10px;
+    flex: 0 0 auto;
+}
+
+.home-left .nav-icon img {
+    width: 30px !important;
+    height: 30px !important;
+}
+
+.home-left .nav-button h3 {
+    font-size: 18px;
+    line-height: 1.3;
+    margin-bottom: 0;
+    font-weight: 700;
+    letter-spacing: 0.1px;
+}
+
+.home-left .nav-button p {
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+/* Toxunma cihazları üçün shared.css-dəki min-height/padding-i sıfırlayırıq */
+@media (hover: none) and (pointer: coarse) {
+    .home-left .nav-button {
+        min-height: 0;
+        padding: 14px 10px;
+    }
+}
+
+
+/* --------------------------------------------------------------------------
+   3) Video paneli
+   -------------------------------------------------------------------------- */
+
+.video-panel {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-stage {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    /* Alçaq ekranlarda footer-in üstünə düşməsin */
+    max-height: calc(var(--home-max-h, 70vh) - 52px);
+    background: #04101d;
+    border-radius: var(--border-radius, 16px);
+    overflow: hidden;
+    box-shadow: 0 14px 40px rgba(26, 58, 92, 0.28);
+    border: 2px solid rgba(212, 175, 55, 0.35);
+}
+
+.video-stage video.promo-video {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+    background: #04101d;
+}
+
+/* Tam ekran rejimi */
+.video-stage:fullscreen {
+    aspect-ratio: auto;
+    width: 100vw;
+    height: 100vh;
+    border: none;
+    border-radius: 0;
+}
+
+.video-stage:-webkit-full-screen {
+    width: 100vw;
+    height: 100vh;
+    border: none;
+    border-radius: 0;
+}
+
+/* ---- Video başlamamışdan əvvəlki ekran: BDU logosu + Oynat düyməsi ---- */
+.video-poster {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+    /* aşağıdakı idarəetmə panelinin hündürlüyü qədər boşluq - logo/düymə onun üstündə qalır */
+    box-sizing: border-box;
+    padding-bottom: 112px;
+    background: linear-gradient(135deg, var(--primary-blue, #1a3a5c) 0%, var(--secondary-blue, #2d5a8c) 100%);
+    z-index: 5;
+    transition: opacity 0.35s ease, background 0.35s ease;
+}
+
+.video-poster-logo {
+    width: auto;
+    max-width: 32%;
+    max-height: 46%;
+    object-fit: contain;
+    filter: drop-shadow(0 8px 22px rgba(0, 0, 0, 0.45));
+}
+
+/* Video bir dəfə başlayandan sonra: logo və fon gedir,
+   yalnız pauza vəziyyətində böyük "Oynat" düyməsi görünür */
+.video-stage.has-started .video-poster {
+    background: transparent;
+    pointer-events: none;
+}
+
+.video-stage.has-started .video-poster-logo {
+    display: none;
+}
+
+.video-stage.is-playing .video-poster {
+    opacity: 0;
+}
+
+
+/* ---- Böyük mərkəzi "Oynat" düyməsi ---- */
+.video-bigplay {
+    pointer-events: auto;
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(135deg, var(--primary-blue, #1a3a5c), var(--secondary-blue, #2d5a8c));
+    color: #fff;
+    font-size: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45), 0 0 0 6px rgba(255, 255, 255, 0.18);
+    transition: transform 0.25s ease, opacity 0.25s ease, background 0.25s ease;
+    z-index: 6;
+}
+
+.video-bigplay i {
+    margin-left: 5px;
+}
+
+.video-bigplay:hover {
+    background: linear-gradient(135deg, var(--accent-gold, #d4af37), #e6c350);
+    transform: scale(1.06);
+}
+
+.video-stage.is-playing .video-bigplay {
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.7);
+}
+
+.video-stage.is-playing .video-poster {
+    pointer-events: none;
+}
+
+/* ---- İdarəetmə paneli ---- */
+.video-controls {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 26px 14px 10px;
+    background: linear-gradient(to top, rgba(4, 16, 29, 0.94) 40%, rgba(4, 16, 29, 0));
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    z-index: 8;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.video-stage.controls-hidden .video-controls {
+    opacity: 0;
+    transform: translateY(12px);
+    pointer-events: none;
+}
+
+/* Zaman zolağı */
+.video-progress {
+    position: relative;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    touch-action: none;
+}
+
+.video-progress::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 7px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.video-progress-buffer,
+.video-progress-played {
+    position: absolute;
+    left: 0;
+    height: 7px;
+    border-radius: 4px;
+    width: 0;
+}
+
+.video-progress-buffer {
+    background: rgba(255, 255, 255, 0.35);
+}
+
+.video-progress-played {
+    background: linear-gradient(90deg, var(--accent-gold, #d4af37), #f0d071);
+}
+
+.video-progress-knob {
+    position: absolute;
+    right: -8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* Düymə sırası */
+.video-buttons {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    flex-wrap: nowrap;
+    color: #fff;
+}
+
+.vbtn {
+    position: relative;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    font-size: 15px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    transition: background 0.2s ease, transform 0.15s ease, color 0.2s ease;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.vbtn:hover {
+    background: var(--accent-gold, #d4af37);
+    color: #14293f;
+}
+
+.vbtn:active {
+    transform: scale(0.92);
+}
+
+.vbtn-primary {
+    width: 48px;
+    height: 48px;
+    font-size: 19px;
+    background: var(--accent-gold, #d4af37);
+    color: #14293f;
+    border-color: rgba(255, 255, 255, 0.35);
+}
+
+.vbtn-primary:hover {
+    background: #f0d071;
+}
+
+.vbtn-toggle.is-on {
+    background: var(--accent-gold, #d4af37);
+    color: #14293f;
+}
+
+/* "10" saniyə etiketi - dairəvi ox ikonunun ortasında */
+#btnBack10 i,
+#btnFwd10 i {
+    font-size: 20px;
+}
+
+.vbtn-sec {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-38%);
+    text-align: center;
+    font-size: 9px;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.3px;
+    pointer-events: none;
+}
+
+.video-time {
+    font-size: 12.5px;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+    opacity: 0.92;
+    margin: 0 4px;
+}
+
+.video-spacer {
+    flex: 1 1 auto;
+}
+
+/* Səs bloku */
+.video-volume {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    flex: 0 1 auto;
+    min-width: 0;
+}
+
+.video-volume input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 92px;
+    height: 6px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.3);
+    outline: none;
+    cursor: pointer;
+    flex: 0 1 92px;
+    min-width: 46px;
+}
+
+.video-volume input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+.video-volume input[type="range"]::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border: none;
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+}
+
+.vol-val {
+    font-size: 11.5px;
+    font-variant-numeric: tabular-nums;
+    width: 34px;
+    text-align: right;
+    opacity: 0.85;
+}
+
+/* Ekran ortasındakı qısa bildiriş (+10 / səs 80% və s.) */
+.video-toast {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    background: rgba(4, 16, 29, 0.82);
+    color: #fff;
+    padding: 12px 22px;
+    border-radius: 14px;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    z-index: 9;
+    white-space: nowrap;
+}
+
+.video-toast.show {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Yükləmə göstəricisi */
+.video-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 46px;
+    height: 46px;
+    margin: -23px 0 0 -23px;
+    border: 4px solid rgba(255, 255, 255, 0.25);
+    border-top-color: var(--accent-gold, #d4af37);
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 7;
+    animation: vspin 0.9s linear infinite;
+}
+
+.video-stage.is-buffering .video-spinner {
+    opacity: 1;
+}
+
+@keyframes vspin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ---- Video altındakı başlıq ---- */
+.video-caption {
+    margin: 0;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--primary-blue, #1a3a5c);
+    line-height: 1.3;
+    letter-spacing: 0.2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.video-caption i {
+    color: var(--accent-gold, #d4af37);
+    font-size: 20px;
+}
+
+
+/* --------------------------------------------------------------------------
+   4) Kiçik ekranlar - alt-alta düzülüş
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 1200px) {
+    #main-page .main-content {
+        position: relative;
+        top: auto;
+        bottom: auto;
+        width: 100%;
+        padding: 20px;
+        overflow: visible;
+        display: block;
+    }
+
+    .home-split {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .home-left,
+    .home-right {
+        flex: 1 1 auto;
+        width: 100%;
+    }
+
+    .home-left .navigation-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+    }
+
+    .home-left .nav-button h3 {
+        font-size: 18px;
+    }
+
+    .video-stage {
+        max-height: none;
+    }
+
+    .video-caption {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 900px) {
+    .video-poster {
+        padding-bottom: 96px;
+    }
+
+    .video-bigplay {
+        width: 74px;
+        height: 74px;
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 768px) {
+    .home-left .navigation-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .video-volume input[type="range"] {
+        width: 60px;
+        flex-basis: 60px;
+    }
+
+    .video-time {
+        font-size: 11px;
+    }
+}
+
+/* Alçaq (qısa) ekranlar üçün əlavə sıxlaşdırma */
+@media (min-width: 1201px) and (max-height: 900px) {
+    .home-left .nav-button {
+        padding: 10px 8px;
+    }
+
+    .home-left .nav-icon {
+        width: 44px;
+        height: 44px;
+        font-size: 20px;
+        margin-bottom: 8px;
+    }
+
+    .home-left .nav-button h3 {
+        font-size: 16px;
+    }
+
+    .video-poster-logo {
+        max-height: 42%;
+    }
+
+    .video-caption {
+        font-size: 18px;
+    }
+}
